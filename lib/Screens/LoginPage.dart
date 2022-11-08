@@ -56,7 +56,7 @@ class _MyHomePageState extends State<MyHomePage>
     super.dispose();
   }
 
-  UserModel _userfromfirebase(FirebaseUser user) {
+  UserModel _userfromfirebase(User user) {
     return user != null ? UserModel(uid: user.uid) : null;
     print(user);
   }
@@ -137,7 +137,7 @@ class _MyHomePageState extends State<MyHomePage>
                       children: <Widget>[
                         Form(
                             key: _formkey,
-                            autovalidate: _autoValidate,
+                            autovalidateMode: AutovalidateMode.disabled,
                             child: Column(
                               children: [
                                 TextFormField(

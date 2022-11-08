@@ -119,10 +119,11 @@ class _ExamResultState extends State<ExamResult>
                             muchDelayedAnimation.value * width, 0, 0),
                         child: DropdownSearch<String>(
                           validator: (v) => v == null ? "Please Select" : null,
-                          hint: "Please Select",
-                          mode: Mode.MENU,
-                          showSelectedItem: true,
-                          
+                          dropdownDecoratorProps: DropDownDecoratorProps(
+                            dropdownSearchDecoration: InputDecoration(
+                              hintText: "Please Select",
+                            ),
+                          ),
                           items: [
                             "Quarterly",
                             "half yearly",
@@ -131,7 +132,7 @@ class _ExamResultState extends State<ExamResult>
                             'Third Revision',
                             'Annual Exam'
                           ],
-                          showClearButton: false,
+                          clearButtonProps: ClearButtonProps(isVisible: false),
                           onChanged: (value) {},
                         ),
                       ),
@@ -154,7 +155,7 @@ class _ExamResultState extends State<ExamResult>
                         transform: Matrix4.translationValues(
                             muchDelayedAnimation.value * width, 0, 0),
                         child: Padding(
-                          padding: const EdgeInsets.only(top:8.0),
+                          padding: const EdgeInsets.only(top: 8.0),
                           child: SubjectCard(
                             subjectname: "English",
                             chapter: "1-5",
@@ -165,11 +166,11 @@ class _ExamResultState extends State<ExamResult>
                           ),
                         ),
                       ),
-                       Transform(
+                      Transform(
                         transform: Matrix4.translationValues(
                             muchDelayedAnimation.value * width, 0, 0),
                         child: Padding(
-                          padding: const EdgeInsets.only(top:8.0),
+                          padding: const EdgeInsets.only(top: 8.0),
                           child: SubjectCard(
                             subjectname: "Maths",
                             chapter: "1-5",
@@ -180,11 +181,11 @@ class _ExamResultState extends State<ExamResult>
                           ),
                         ),
                       ),
-                       Transform(
+                      Transform(
                         transform: Matrix4.translationValues(
                             muchDelayedAnimation.value * width, 0, 0),
                         child: Padding(
-                          padding: const EdgeInsets.only(top:8.0),
+                          padding: const EdgeInsets.only(top: 8.0),
                           child: SubjectCard(
                             subjectname: "science",
                             chapter: "1-5",
@@ -195,11 +196,11 @@ class _ExamResultState extends State<ExamResult>
                           ),
                         ),
                       ),
-                       Transform(
+                      Transform(
                         transform: Matrix4.translationValues(
                             muchDelayedAnimation.value * width, 0, 0),
                         child: Padding(
-                          padding: const EdgeInsets.only(top:8.0),
+                          padding: const EdgeInsets.only(top: 8.0),
                           child: SubjectCard(
                             subjectname: "Social Science",
                             chapter: "1-5",
@@ -372,11 +373,10 @@ class _ExamResultState extends State<ExamResult>
                                 ),
                               ),
                             ),
-                         
                           ],
                         ),
                       ),
-                         SizedBox(
+                      SizedBox(
                         height: height * 0.20,
                       ),
                     ],

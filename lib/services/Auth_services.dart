@@ -9,13 +9,16 @@ class Auth_Service {
     final GoogleSignInAccount googleuser = await _googlesignin.signIn();
     final GoogleSignInAuthentication authentication =
         await googleuser.authentication;
-    final AuthCredential credential = GoogleAuthProvider.getCredential(
+    final AuthCredential credential = GoogleAuthProvider.credential(
       accessToken: authentication.accessToken,
       idToken: authentication.idToken,
     );
     final User user =
-        (await _firebaseAuth.signInWithCredential(credential).then((value) {
-      print(value);
-    }));
+        (await _firebaseAuth.signInWithCredential(credential).then(
+      // ignore: missing_return
+      (value) {
+        print(value);
+      },
+    ));
   }
 }
